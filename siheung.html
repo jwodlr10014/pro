@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(#92C4FF, #FFD8D8);
+    height: 1080px;
+    overflow: hidden;
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-h{
+    display: inline-block;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 1.5s;
+}
+.main-h.clicked{
+    margin-bottom: 600px;
+    transition: all 1.5s;
+}
+.main-h h1{
+    font-size: 20px;
+}
+.main-h h2{
+    font-size: 80px;
+}
+.sun{
+    z-index: -2;
+    position: absolute;
+    left: 800px;
+    top: 700px;
+    background-color: #FF9B63;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    transition: all 1.5s;
+}
+.sun.clicked{
+    top: -250px;
+    position: absolute;
+    transition: all 1.5s;
+    background-color: #FF7426;
+}
+.arrow{
+    position: absolute;
+    z-index: 1;
+    left: 945px;
+    top: 700px;
+    animation: arrow 2s infinite;
+    transition: all 0.5s;
+}
+@keyframes arrow {
+    0%{
+        top: 700px;
+    }
+    50%{
+        top: 620px;
+    }
+    100%{
+        top: 700px;
+    }
+}
+.arrow.clicked{
+    position: absolute;
+    top: 0px;
+    animation: arrow2 2s infinite;
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+@keyframes arrow2 {
+    0%{
+        top: 50px;
+    }
+    50%{
+        top: 110px;
+    }
+    100%{
+        top: 50px;
+    }
+}
+.back{
+    position: absolute;
+    z-index: -1;
+}
+.siheung{
+    position: relative;
+    transform: translateY(200px);
+    left: 767px;
+    z-index: 2;
+    transition: all 1s;
+    
+}
+.siheung.clicked{
+    transform: translateY(-650px);
+    transition: all 1s;
+    overflow: visible;
+    z-index: 2;
+}
+.siheung img{
+    position: absolute;
+    transition: all 1s;
+}
+aside{
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 150px 50px 50px;
+    background-color: #E1591F;
+    transform: translate(-400px);
+    transition: all 0.5s ease;
+}
+aside.clicked{
+    transform: translate(0px);
+    transition: all 0.5s ease;
+}
+aside a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 700;
+}
+aside a:hover{
+    color: #702800;
+    transition: all 0.5s;
+}
+.btn{
+    position: fixed;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+    transform: translate(30px);
+    transition: all 0.5s ease;
+}
+.btn.clicked{
+    transform: translate(400px) rotate(180deg);
+    transition: all 0.5s ease;
+}
+</style>
+<body>
+    <aside>
+        <a href="#">February</a>
+        <a href="#">March</a>
+        <a href="#">July</a>
+    </aside>
+    <div class="btn"><img src="right.png"></div>
+    <div class="sun"></div>
+    <img class="arrow" src="arrow.png">
+    <img class="back" src="backimg1.png">
+
+    <div class="main">
+    <div class="main-h">
+        <h1>Siheung Calendar</h1>
+        <h2>April 2024</h2>
+    </div>
+    </div>
+
+    <div class="siheung">
+        <img src="siheung2.png">
+        <img src="siheung3.png">
+        <img src="siheung1.png">
+    </div>
+    
+
+    
+    <script src="principle.js"></script> 
+</body>
+</html>
